@@ -64,7 +64,7 @@
               <a href="https://starlitxiling.github.io">Youhao Hu</a><sup>*1</sup>,
             </span>
             <span class="author-block">
-              <a href="https://github.com/zuraron"></a>Chenhao Yu<sup>*1</sup>,
+              <a href="https://github.com/zuraron">Chenhao Yu</a><sup>*1</sup>,
             </span>
 
             <br>
@@ -73,19 +73,19 @@
               Chaoran Xu,
             </span>
             <span class="author-block">
-              Jiachen Zhang,
+              <a href="https://github.com/zgates2">Jiachen Zhang</a>,
             </span>
             <span class="author-block">
-              Guocai Yao,
+              <a href="https://hub.baai.ac.cn/users/55514">Guocai Yao</a>,
             </span>
             <span class="author-block">
-              Tiejun Huang,
+              <a href="https://idm.pku.edu.cn/info/1017/1040.htm">Tiejun Huang</a>,
             </span>
             <span class="author-block">
-              <a href="https://rhe-web.github.io/">Ran He</a>,
+              <a href="https://rhe-web.github.io">Ran He</a>,
             </span>
             <span class="author-block">
-              Zhongyuan Wang
+              <a href="https://hub.baai.ac.cn/users/62258">Zhongyuan Wang</a>
             </span>
           </div>
 
@@ -126,6 +126,17 @@
 </section>
 
 <section class="section">
+  <div class="container is-max-widescreen">
+    <div class="lead-media-shell has-text-centered">
+      <video autoplay loop muted playsinline src="./static/videos/humanaligned-4K.mov"
+             poster="./static/videos/loading-icon.gif"
+             class="media-frame"></video>
+      <p class="lead-media-caption">
+        <strong>These observations suggest that, without direct and physically grounded interaction feedback, teleoperation users rely mainly on visual cues and tend to overcompensate at contact, which leads to inefficient demonstrations and severe force fluctuations. By contrast, <em>OmniUMI</em> enables more natural contact modulation and produces smoother, more human-like interaction data. This result supports the claim that the handheld embodiment and interaction-centered sensing design improve human alignment during demonstration.</strong>
+      </p>
+    </div>
+  </div>
+
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
@@ -143,64 +154,77 @@
 
 
 <section class="section">
-  <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Task 1: Wipe Whiteboard 🧽 </h2>
-    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
-      We design a whiteboard erasing task in which the end-effector must remove red drawings from a flat whiteboard surface while maintaining continuous sliding contact. Compared with simple surface tracing, this task imposes a more realistic and interaction-intensive requirement, since successful erasing depends not only on trajectory tracking but also on maintaining appropriate external contact force throughout the motion.
-    </p>
-    
-    <div class="columns is-centered">
-      <div class="column is-10 has-text-centered">
-        
+  <div class="container is-max-widescreen">
+    <div class="system-design-shell">
+      <div class="section-heading-shell">
+        <h2 class="title is-2">OmniUMI System Design</h2>
+      </div>
+      <div class="system-design-copy">
+        <p class="system-paragraph-title">Collection--Deployment Consistency via a Motorized Gripper.</p>
+        <p class="system-design-text">
+          A major challenge in UMI-style systems lies in collection--deployment consistency. Even in vision-centric settings, aligning the interface used for demonstration with the hardware used for deployment is already nontrivial. Once internal and external force, tactile sensing, and depth are introduced, this mismatch becomes substantially more severe because the observations no longer depend only on RGB appearance and gripper width, but also on contact mechanics and sensing embodiment.
+        </p>
+        <p class="system-design-text">
+          To reduce this gap, OmniUMI adopts a motorized quick-swap gripper that can be reused across both collection and deployment. Reusing the same gripper preserves not only the geometry of the end-effector, but also the interaction-related sensing context attached to it. This significantly reduces alignment effort and makes multimodal observations more consistent across the two stages. In this sense, the motorized gripper is not merely a hardware convenience; it is a system design choice aimed at preserving physically grounded multimodal consistency.
+        </p>
+      </div>
+      <div class="system-media-block">
+        <p class="system-media-label">Motorized Quick-Switch Structure</p>
+        <video autoplay loop muted playsinline src="./static/videos/quickswitch-1080p2M.mov"
+               poster="./static/videos/loading-icon.gif"
+               class="media-frame"></video>
+      </div>
+      <div class="system-media-block">
+        <p class="system-media-label">Exploded System View</p>
+        <img src="./static/images/fig.png"
+             alt="Exploded view of the OmniUMI system design."
+             class="media-frame">
+        <p class="system-media-caption">
+          Hardware overview of <em>OmniUMI</em>. The system is organized around a unified handheld embodiment that integrates the custom hub, fisheye and depth sensing, 6-axis force sensing, motion tracking, quick-release mechanism, and tactile-compatible gripper structure. The same gripper-side embodiment is reused across data collection and deployment to improve collection--deployment consistency.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="tasks-section-shell">
+      <div class="section-heading-shell">
+        <h2 class="title is-2">Tasks</h2>
+      </div>
+
+      <article class="task-panel">
+        <h3 class="title is-3">Task 1: Wipe Whiteboard 🧽</h3>
+        <p class="task-description">
+          We design a whiteboard erasing task in which the end-effector must remove red drawings from a flat whiteboard surface while maintaining continuous sliding contact. Compared with simple surface tracing, this task imposes a more realistic and interaction-intensive requirement, since successful erasing depends not only on trajectory tracking but also on maintaining appropriate external contact force throughout the motion.
+        </p>
         <video autoplay loop muted playsinline src="./static/videos/wipewhiteboard-1080p2M.mov"
                poster="./static/videos/loading-icon.gif"
-               style="border: 1px solid #bbb; border-radius: 10px; width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"></video>
-      </div>
-    </div>
-    
-  </div>
-</section>
+               class="media-frame"></video>
+      </article>
 
-
-<section class="section">
-  <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Pick-Place Water 🫙</h2>
-    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
-      The robot initially grasps two transparent plastic cups placed upside down and nested together. During execution, the policy is required to gradually loosen the gripper until the inner cup is released and drops, while the outer cup remains stably grasped. This task is intentionally designed to operate under very small gripping forces, making it a suitable benchmark for evaluating whether tactile sensing can support subtle contact-state discrimination and precise release control beyond what vision alone can provide.
-    </p>
-    
-    <div class="columns is-centered">
-      <div class="column is-10 has-text-centered">
-        
+      <article class="task-panel">
+        <h3 class="title is-3">Task 2: Pick-Place Water 🫙</h3>
+        <p class="task-description">
+          The robot initially grasps two transparent plastic cups placed upside down and nested together. During execution, the policy is required to gradually loosen the gripper until the inner cup is released and drops, while the outer cup remains stably grasped. This task is intentionally designed to operate under very small gripping forces, making it a suitable benchmark for evaluating whether tactile sensing can support subtle contact-state discrimination and precise release control beyond what vision alone can provide.
+        </p>
         <video autoplay loop muted playsinline src="./static/videos/pickplace-watercup-1080p2M.mov"
                poster="./static/videos/loading-icon.gif"
-               style="border: 1px solid #bbb; border-radius: 10px; width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-              
-        </video>   
-      </div>
-    </div>
-    
-  </div>
-</section>
+               class="media-frame"></video>
+      </article>
 
-<section class="section">
-  <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Drop cup 🥛</h2>
-    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
-      We perform a pick-and-place task using a relatively heavy object, namely a full unopened bottle of mineral water. This task requires sufficiently large and well-regulated internal grasping force to securely lift, transport, and place the object without slippage, making it an appropriate benchmark for load-sensitive grasp control.
-    </p>
-    
-    <div class="columns is-centered">
-      <div class="column is-10 has-text-centered">
-        
+      <article class="task-panel">
+        <h3 class="title is-3">Task 3: Drop Cup 🥛</h3>
+        <p class="task-description">
+          We perform a pick-and-place task using a relatively heavy object, namely a full unopened bottle of mineral water. This task requires sufficiently large and well-regulated internal grasping force to securely lift, transport, and place the object without slippage, making it an appropriate benchmark for load-sensitive grasp control.
+        </p>
         <video autoplay loop muted playsinline src="./static/videos/drop_cup-1080p2M.mov"
                poster="./static/videos/loading-icon.gif"
-               style="border: 1px solid #bbb; border-radius: 10px; width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-              
-        </video>   
-      </div>
+               class="media-frame"></video>
+      </article>
     </div>
-    
   </div>
 </section>
 

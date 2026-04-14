@@ -127,6 +127,134 @@ body {
   margin: 0;
 }
 
+.media-frame {
+  display: block;
+  width: 100%;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lead-media-shell {
+  max-width: 1320px;
+  margin: 0 auto 2.5rem;
+}
+
+.lead-media-caption {
+  margin-top: 0.85rem;
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 700;
+  text-align: left;
+}
+
+.system-design-shell,
+.tasks-section-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-heading-shell {
+  max-width: 980px;
+  margin: 0 auto 2rem;
+}
+
+.section-heading-shell .title {
+  text-align: center;
+  margin-bottom: 0.85rem;
+}
+
+.section-intro {
+  margin: 0 auto;
+  max-width: 900px;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #444;
+  text-align: center;
+}
+
+.system-design-copy {
+  max-width: 980px;
+  margin: 0 auto 2rem;
+}
+
+.system-paragraph-title {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  text-align: left;
+}
+
+.system-design-text {
+  margin: 0 0 1rem;
+  font-size: 1.08rem;
+  line-height: 1.8;
+  color: #444;
+  text-align: left;
+}
+
+.system-media-block + .system-media-block {
+  margin-top: 2.5rem;
+}
+
+.system-media-label {
+  margin: 0 0 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+  text-align: left;
+}
+
+.system-media-caption {
+  margin: 0.85rem 0 0;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #555;
+  text-align: left;
+}
+
+.task-panel {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.task-panel + .task-panel {
+  margin-top: 4rem;
+  padding-top: 4rem;
+  border-top: 1px solid #ececec;
+}
+
+.task-panel .title {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.task-description {
+  margin: 0 0 2rem;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  text-align: left;
+}
+
+@media screen and (max-width: 768px) {
+  .lead-media-shell {
+    margin-bottom: 2rem;
+  }
+
+  .system-design-text,
+  .section-intro,
+  .task-description {
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  .task-panel + .task-panel {
+    margin-top: 3rem;
+    padding-top: 3rem;
+  }
+}
+
 
 .interpolation-panel {
   background: #f5f5f5;
