@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>omniUMI:A Unified Multimodal Interactive Interface for Physically Grounded Robot Learning</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B34V641Z6X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-B34V641Z6X');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">OmniUMI: Towards Physically Grounded Robot Learning via Human-Aligned Multimodal Interaction</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://luoshaqi.github.io">Shaqi Luo</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/Yuanyuan-Lee">Yuanyuan Li</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="https://starlitxiling.github.io">Youhao Hu</a><sup>*1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/zuraron"></a>Chenhao Yu<sup>*1</sup>,
+            </span>
+
+            <br>
+
+            <span class="author-block">
+              Chaoran Xu,
+            </span>
+            <span class="author-block">
+              Jiachen Zhang,
+            </span>
+            <span class="author-block">
+              Guocai Yao,
+            </span>
+            <span class="author-block">
+              Tiejun Huang,
+            </span>
+            <span class="author-block">
+              <a href="https://rhe-web.github.io/">Ran He</a>,
+            </span>
+            <span class="author-block">
+              Zhongyuan Wang
+            </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2604.10647" class="external-link button is-normal is-rounded is-dark" title="View pdf">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                 <a href="https://arxiv.org/abs/2604.10647" class="external-link button is-normal is-rounded is-dark" title="View on arXiv">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code(Coming Soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            UMI-style interfaces enable scalable robot learning, but existing systems remain largely visuomotor, relying primarily on RGB observations and trajectory while providing only limited access to physical interaction signals. This becomes a fundamental limitation in contact-rich manipulation, where success depends on contact dynamics such as tactile interaction, internal grasping force, and external interaction wrench that are difficult to infer from vision alone. We present OmniUMI, a unified framework for physically grounded robot learning via human-aligned multimodal interaction. OmniUMI synchronously captures RGB, depth, trajectory, tactile sensing, internal grasping force, and external interaction wrench within a compact handheld system, while maintaining collection--deployment consistency through a shared embodiment design. To support human-aligned demonstration, OmniUMI provides dual-force feedback through bilateral gripper feedback and natural perception of external interaction wrench in the handheld embodiment. Built on this interface, we extend diffusion policy with visual, tactile, and force-related observations, and deploy the learned policy through impedance-based execution for unified regulation of motion and contact behavior. Experiments demonstrate reliable sensing and strong downstream performance on force-sensitive pick-and-place, interactive surface erasing, and tactile-informed selective release. Overall, OmniUMI combines physically grounded multimodal data acquisition with human-aligned interaction, providing a scalable foundation for learning contact-rich manipulation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Task 1: Wipe Whiteboard 🧽 </h2>
+    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
+      We design a whiteboard erasing task in which the end-effector must remove red drawings from a flat whiteboard surface while maintaining continuous sliding contact. Compared with simple surface tracing, this task imposes a more realistic and interaction-intensive requirement, since successful erasing depends not only on trajectory tracking but also on maintaining appropriate external contact force throughout the motion.
+    </p>
+    
+    <div class="columns is-centered">
+      <div class="column is-10 has-text-centered">
+        
+        <video autoplay loop muted playsinline src="./static/videos/wipewhiteboard-1080p2M.mov"
+               poster="./static/videos/loading-icon.gif"
+               style="border: 1px solid #bbb; border-radius: 10px; width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"></video>
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Pick-Place Water 🫙</h2>
+    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
+      The robot initially grasps two transparent plastic cups placed upside down and nested together. During execution, the policy is required to gradually loosen the gripper until the inner cup is released and drops, while the outer cup remains stably grasped. This task is intentionally designed to operate under very small gripping forces, making it a suitable benchmark for evaluating whether tactile sensing can support subtle contact-state discrimination and precise release control beyond what vision alone can provide.
+    </p>
+    
+    <div class="columns is-centered">
+      <div class="column is-10 has-text-centered">
+        
+        <video autoplay loop muted playsinline src="./static/videos/pickplace-watercup-1080p2M.mov"
+               poster="./static/videos/loading-icon.gif"
+               style="border: 1px solid #bbb; border-radius: 10px; width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+              
+        </video>   
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Drop cup 🥛</h2>
+    <p class="has-text-centered" style="font-size: 1.2rem; margin-bottom: 2rem;">
+      We perform a pick-and-place task using a relatively heavy object, namely a full unopened bottle of mineral water. This task requires sufficiently large and well-regulated internal grasping force to securely lift, transport, and place the object without slippage, making it an appropriate benchmark for load-sensitive grasp control.
+    </p>
+    
+    <div class="columns is-centered">
+      <div class="column is-10 has-text-centered">
+        
+        <video autoplay loop muted playsinline src="./static/videos/drop_cup-1080p2M.mov"
+               poster="./static/videos/loading-icon.gif"
+               style="border: 1px solid #bbb; border-radius: 10px; width: 100%; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+              
+        </video>   
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content has-text-centered">
+    <h2 class="title">BibTeX</h2>
+    
+    <pre style="text-align: left;"><code>@misc{luo2026omniumiphysicallygroundedrobot,
+      title={OmniUMI: Towards Physically Grounded Robot Learning via Human-Aligned Multimodal Interaction}, 
+      author={Shaqi Luo and Yuanyuan Li and Youhao Hu and Chenhao Yu and Chaoran Xu and Jiachen Zhang and Guocai Yao and Tiejun Huang and Ran He and Zhongyuan Wang},
+      year={2026},
+      eprint={2604.10647},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2604.10647}, 
+}
+</code></pre>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop content has-text-centered">
+    <h2 class="title is-2">Join Us</h2>
+    <p style="font-size: 1.1rem;">
+      We are looking for passionate and self-motivated students to join us!<br>
+      Our research focuses on Vision-Language-Action (VLA) and Whole-Body Control (WBC).<br>
+      Internship and research collaboration opportunities are available.
+    </p>
+    <p style="font-size: 1.25rem; font-weight: 500;">
+      📬 Send your resume to: <a href="mailto:luoshaqi@163.com">luoshaqi@163.com</a>
+    </p>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Website template modified from <a
+              href="https://nerfies.github.io/">NeRFies</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
