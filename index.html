@@ -173,9 +173,10 @@
       </div>
       <div class="system-media-block">
         <p class="system-media-label">Motorized Quick-Switch Structure</p>
-        <video autoplay loop muted playsinline src="./static/videos/quickswitch-1080p2M.mov"
-               poster="./static/videos/loading-icon.gif"
-               class="media-frame"></video>
+          <video autoplay loop muted playsinline preload="none"
+                 data-src="./static/videos/quickswitch-1080p2M.mov"
+                 poster="./static/videos/loading-icon.gif"
+                 class="media-frame js-lazy-video"></video>
       </div>
       <div class="system-media-block">
         <p class="system-media-label">Exploded System View</p>
@@ -203,9 +204,10 @@
         <p class="task-description">
           We design a whiteboard erasing task in which the end-effector must remove red drawings from a flat whiteboard surface while maintaining continuous sliding contact. Compared with simple surface tracing, this task imposes a more realistic and interaction-intensive requirement, since successful erasing depends not only on trajectory tracking but also on maintaining appropriate external contact force throughout the motion.
         </p>
-        <video autoplay loop muted playsinline src="./static/videos/wipewhiteboard-1080p2M.mov"
+        <video autoplay loop muted playsinline preload="none"
+               data-src="./static/videos/wipewhiteboard1-1080p2M.mov"
                poster="./static/videos/loading-icon.gif"
-               class="media-frame"></video>
+               class="media-frame js-lazy-video"></video>
       </article>
 
       <article class="task-panel">
@@ -213,9 +215,10 @@
         <p class="task-description">
           The robot initially grasps two transparent plastic cups placed upside down and nested together. During execution, the policy is required to gradually loosen the gripper until the inner cup is released and drops, while the outer cup remains stably grasped. This task is intentionally designed to operate under very small gripping forces, making it a suitable benchmark for evaluating whether tactile sensing can support subtle contact-state discrimination and precise release control beyond what vision alone can provide.
         </p>
-        <video autoplay loop muted playsinline src="./static/videos/pickplace-watercup-1080p2M.mov"
+        <video autoplay loop muted playsinline preload="none"
+               data-src="./static/videos/pickplace-watercup-1080p2M.mov"
                poster="./static/videos/loading-icon.gif"
-               class="media-frame"></video>
+               class="media-frame js-lazy-video"></video>
       </article>
 
       <article class="task-panel">
@@ -223,9 +226,10 @@
         <p class="task-description">
           We perform a pick-and-place task using a relatively heavy object, namely a full unopened bottle of mineral water. This task requires sufficiently large and well-regulated internal grasping force to securely lift, transport, and place the object without slippage, making it an appropriate benchmark for load-sensitive grasp control.
         </p>
-        <video autoplay loop muted playsinline src="./static/videos/drop_cup-HD 1080p.mov"
+        <video autoplay loop muted playsinline preload="none"
+               data-src="./static/videos/drop_cup-HD 1080p.mov"
                poster="./static/videos/loading-icon.gif"
-               class="media-frame"></video>
+               class="media-frame js-lazy-video"></video>
       </article>
     </div>
   </div>

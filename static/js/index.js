@@ -19,6 +19,55 @@ function setInterpolationImage(i) {
   $('#interpolation-image-wrapper').empty().append(image);
 }
 
+function activateLazyVideo(video) {
+  if (!video || video.dataset.loaded === 'true') {
+    return;
+  }
+
+  var src = video.dataset.src;
+  if (!src) {
+    return;
+  }
+
+  video.dataset.loaded = 'true';
+  video.src = src;
+  video.load();
+
+  var playPromise = video.play();
+  if (playPromise && typeof playPromise.catch === 'function') {
+    playPromise.catch(function() {});
+  }
+}
+
+function setupLazyVideos() {
+  var lazyVideos = document.querySelectorAll('video.js-lazy-video[data-src]');
+  if (!lazyVideos.length) {
+    return;
+  }
+
+  if (!('IntersectionObserver' in window)) {
+    lazyVideos.forEach(activateLazyVideo);
+    return;
+  }
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      activateLazyVideo(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, {
+    rootMargin: '300px 0px'
+  });
+
+  lazyVideos.forEach(function(video) {
+    observer.observe(video);
+  });
+}
+
 
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
@@ -74,5 +123,6 @@ $(document).ready(function() {
     $('#interpolation-slider').prop('max', NUM_INTERP_FRAMES - 1);
 
     bulmaSlider.attach();
+    setupLazyVideos();
 
 })
